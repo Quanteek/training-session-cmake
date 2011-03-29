@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+if(MESOCENTER)
+endif()
+project(pi)
+find_package(OpenMP)
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS})
+set(EXE_NAME pi)
+add_executable(${EXE_NAME} main.cpp)
