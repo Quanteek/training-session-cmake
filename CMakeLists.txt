@@ -6,12 +6,12 @@ find_package(Boost)
 include_directories(${Boost_INCLUDE_DIRECTORIES})
 
 set(SRC
-  main.cpp
   Model.cpp
   OutputFile.cpp
   )
+add_library(mylib ${SRC})
 
 set(EXE_NAME hello)
-
-add_executable(${EXE_NAME} ${SRC})
+add_executable(${EXE_NAME} main.cpp)
+target_link_libraries(${EXE_NAME} mylib)
 target_link_libraries(${EXE_NAME} ${Boost_LIBRARIES})
