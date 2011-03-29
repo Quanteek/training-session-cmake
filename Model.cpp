@@ -1,4 +1,5 @@
 #include "Model.h"
+#include "Algorithm.h"
 
 void Model::run()
 {
@@ -6,7 +7,7 @@ void Model::run()
     double current_value = 0.0;
     while(current_value < _end_value)
         {
-            _result.push_back(current_value);
+            _result.push_back(current_value+Algorithm()());
             current_value+=_step;
         }
 }
